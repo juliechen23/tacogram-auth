@@ -16,10 +16,14 @@
       </div>
       <div class="col-3 text-end">
         <!-- TODO: if logged in user, show user's first name and Logout button -->
+        <% if @current_user %>
+        Hey, <%= @current_user["first_name"]%>
+        <a href="/logout" class="btn btn-default">Logout</a>
+        <% else %>
         <!-- TODO: if logged in user, hide Login and Sign Up -->
         <a href="/login" class="btn btn-default">Login</a> |
         <a href="/users/new" class="btn btn-default">Sign Up</a>
-        <a href="/logout" class="btn btn-default">Logout</a>
+        <% end %>
       </div>
     </div>
 
